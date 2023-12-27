@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./Home";
+import Dashboard from "./Dashboard";
 
-function App() {
-
-  return (
-   <h1>Hola Mundo</h1>
-  )
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/dashboard" component={Dashboard} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default App
